@@ -7,7 +7,7 @@ namespace schort
 {
 	enum class token_type
 	{
-		IDENTIFIER,
+		IDENTIFIER, NUMBER,
 
 		CONST, MUT, MET,
 
@@ -25,7 +25,7 @@ namespace schort
 		IF, ELSE, WHEN, MATCHES, DEFAULT,
 		RETURN, GOTO, CONTINUE, BREAK,
 
-		PUB, PROT, PRIV, STATIC, FINAL,
+		PUB, PROT, PRIV, STATIC,
 		THROW, TRY, UNLESS, FINALLY,
 
 		NULLPTR, TRUE, FALSE,
@@ -43,7 +43,7 @@ namespace schort
 		LEFT_PAREN, RIGHT_PAREN,
 		LEFT_SQUARE, RIGHT_SQUARE,
 		LEFT_BRACE, RIGHT_BRACE,
-		LEFT_TRI, RIGHT_TRI,
+		LESS_THAN, MORE_THAN,
 	};
 
 	inline std::string token_type_to_string(const token_type &type)
@@ -52,6 +52,9 @@ namespace schort
 		{
 		case token_type::IDENTIFIER:
 			return "IDENTIFIER";
+
+		case token_type::NUMBER:
+			return "NUMBER";
 
 		case token_type::CONST:
 			return "CONST";
@@ -167,9 +170,6 @@ namespace schort
 		case token_type::STATIC:
 			return "STATIC";
 
-		case token_type::FINAL:
-			return "FINAL";
-
 		case token_type::THROW:
 			return "THROW";
 
@@ -200,8 +200,98 @@ namespace schort
 		case token_type::MACRO:
 			return "MACRO";
 
+		case token_type::EXCLAMATION:
+			return "EXCLAMATION";
+
+		case token_type::AT_SIGN:
+			return "AT_SIGN";
+
+		case token_type::HASHTAG:
+			return "HASHTAG";
+
+		case token_type::PERCENT:
+			return "PERCENT";
+
+		case token_type::TILDE:
+			return "TILDE";
+
+		case token_type::CARET:
+			return "CARET";
+
+		case token_type::AMPERSAND:
+			return "AMPERSAND";
+
+		case token_type::PLUS:
+			return "PLUS";
+
+		case token_type::DASH:
+			return "DASH";
+
+		case token_type::STAR:
+			return "STAR";
+
+		case token_type::SLASH:
+			return "SLASH";
+
+		case token_type::EQUAL:
+			return "EQUAL";
+
+		case token_type::COLON:
+			return "COLON";
+
+		case token_type::SEMICOLON:
+			return "SEMICOLON";
+
+		case token_type::GRAVE:
+			return "GRAVE";
+
+		case token_type::APOSTROPHE:
+			return "APOSTROPHE";
+
+		case token_type::QUOTE:
+			return "QUOTE";
+
+		case token_type::COMMA:
+			return "COMMA";
+
+		case token_type::PERIOD:
+			return "PERIOD";
+
+		case token_type::BACKSLASH:
+			return "BACKSLASH";
+
+		case token_type::BAR:
+			return "BAR";
+
+		case token_type::QUESTION:
+			return "QUESTION";
+
+		case token_type::LEFT_PAREN:
+			return "LEFT_PAREN";
+
+		case token_type::RIGHT_PAREN:
+			return "RIGHT_PAREN";
+
+		case token_type::LEFT_BRACE:
+			return "LEFT_BRACE";
+
+		case token_type::RIGHT_BRACE:
+			return "RIGHT_BRACE";
+
+		case token_type::LEFT_SQUARE:
+			return "LEFT_SQUARE";
+
+		case token_type::RIGHT_SQUARE:
+			return "RIGHT_SQUARE";
+
+		case token_type::LESS_THAN:
+			return "LESS_THAN";
+
+		case token_type::MORE_THAN:
+			return "MORE_THAN";
+
 		default:
-			return "Unknown token type";
+			return "UNKNOWN";
 		}
 	}
 }

@@ -18,6 +18,11 @@ namespace schort
 
 		std::vector<token> tokenize();
 
+		[[nodiscard]] bool has_error() const;
+
+		[[nodiscard]] std::vector<std::string> error_messages() const;
+
+	public:
 		tokenizer() = delete;
 
 		tokenizer(const tokenizer &) = delete;
@@ -25,7 +30,7 @@ namespace schort
 		tokenizer &operator=(const tokenizer &) = delete;
 
 	private:
-		char next();
+		char advance();
 
 		[[nodiscard]] std::optional<char> peek() const;
 

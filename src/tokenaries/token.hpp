@@ -13,6 +13,8 @@ namespace schort
 		token_type type{};
 
 		std::optional<std::string> value{};
+
+		explicit operator std::string() const;
 	};
 }
 
