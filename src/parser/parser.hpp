@@ -3,6 +3,7 @@
 
 #include <vector>
 
+#include "../ast/ast.hpp"
 #include "../tokenaries/token.hpp"
 
 namespace schort
@@ -16,12 +17,21 @@ namespace schort
 
 		~parser();
 
+		[[nodiscard]] ast parse();
+
 	public:
 		parser() = delete;
 
 		parser(const parser &) = delete;
 
 		parser &operator=(const parser &) = delete;
+
+	private:
+		token advance();
+
+		[[nodiscard]] std::optional<token> peek() const;
+
+		[[nodiscard]] inline bool is_eof() const;
 
 	private:
 		std::size_t m_index{};
