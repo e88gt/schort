@@ -1,9 +1,14 @@
 #include <iostream>
 
-int main() {
-	constexpr std::string message = "Hello World!";
+#include "tokenaries/tokenizer.hpp"
 
-	std::cout << message << '\n';
+int main()
+{
+	const std::string source = "return 0;";
+
+	schort::tokenizer tokenizer{ source };
+
+	const std::vector<schort::token> tokens{ tokenizer.tokenize() };
 
 	return EXIT_SUCCESS;
 }
