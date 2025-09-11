@@ -14,6 +14,8 @@ int main()
 		{
 			std::cerr << error << '\n';
 		}
+
+		std::cerr << '\n';
 	}
 
 	const std::vector<schort::token> tokens{ tokenizer.tokenize() };

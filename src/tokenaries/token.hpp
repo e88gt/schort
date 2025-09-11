@@ -10,11 +10,11 @@ namespace schort
 {
 	struct token
 	{
+		explicit operator std::string() const;
+
 		token_type type{};
 
 		std::optional<std::string> value{};
-
-		explicit operator std::string() const;
 	};
 }
 

@@ -8,4 +8,6 @@ add_executable(schort
         src/tokenaries/tokenizer.hpp
         src/tokenaries/token.hpp
         src/tokenaries/token.cpp
+        src/parser/parser.cpp
+        src/parser/parser.hpp
 )
